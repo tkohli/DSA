@@ -40,3 +40,19 @@ def canBeEqual(target, arr):
     if arr == target:
         return True
     return False
+	#--------------------
+	dict1 = {}
+        dict2 = {}
+        for a in arr:
+            if a in dict1:
+                dict1[a] += 1
+            else:
+                dict1[a] = 1
+        for tar in target:
+            if tar in dict2:
+                dict2[tar] += 1
+            else:
+                dict2[tar] = 1
+        if dict1 == dict2:
+            return True
+        return False
