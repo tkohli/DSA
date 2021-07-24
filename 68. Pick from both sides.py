@@ -79,9 +79,6 @@ class Solution:
         """
         Time complexity = O(n) | Space complexity = O(1)
         Run time outputs: 349 ms	16132 KB
-        We first take sum of last B digits then we find 
-        local maximas by changing the numbers such that 
-        every time maximum number is returned 
         """
         left = A[:B]
         val = sum(left)
