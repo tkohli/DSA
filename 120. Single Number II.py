@@ -30,7 +30,6 @@ Example Input 2:
     A = [0, 0, 0, 1]
 Example Output 2:
     1
-
 """
 from collections import Counter
 class Solution:
