@@ -19,9 +19,17 @@ class node:
             self.value = newValue
 
             
-    def findVal(self,fValue):
-        pass 
-
+    def findVal(self,findValue):
+        if findValue > self.value:
+            if self.right: # if self.right is not none
+                return self.right.findVal(findValue)
+            return False
+        elif findValue < self.value:
+            if self.left:
+                return self.left.findVal(findValue)
+            return False
+        else:
+            return True
 
     def printTree(self):
         if self.left:
@@ -40,3 +48,5 @@ root.insert(19)
 
 
 root.printTree()
+print(root.findVal(35))
+# Todo Remove an element in BST
