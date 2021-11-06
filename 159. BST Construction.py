@@ -86,4 +86,3 @@ root.remove(35)
 
 root.printTree()
 print(root.findVal(35))
-# Todo Remove an element in BST
