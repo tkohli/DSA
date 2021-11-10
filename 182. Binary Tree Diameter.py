@@ -11,15 +11,18 @@ def binaryTreeDiameter(tree):
     Start with DFS
     Find height of tree and then count nodes
     """
-
-
-    # Write your code here.
-    return -1
+    return getTreeInfo(tree).diameter
 
 def getTreeInfo(tree):
     if tree is None:
         return TreeInfo(0,0)
-        
+    leftTreeinfo = getTreeInfo(tree.left)
+    rightTreeinfo = getTreeInfo(tree.right)
+    longestPathThroughRoot = leftTreeinfo.height + rightTreeinfo.height
+    maxDiameterTilNow = max(leftTreeinfo.diameter,rightTreeinfo.diameter)
+    currentDiameter = max(longestPathThroughRoot,maxDiameterTilNow)
+    currentHeight =1+ max(leftTreeinfo.height,rightTreeinfo.height) 
+    return TreeInfo(currentDiameter,currentHeight)
 
 
 class TreeInfo:
