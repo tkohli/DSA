@@ -13,7 +13,9 @@ def maxSumIncreasingSubsequence(array):
             maxSumIdx = i
     return [sums[maxSumIdx], buildSequence(array,sequences,maxSumIdx) ]
 
-def buildSequence(array,sequences,maxSumIdx):
-
-
-print(maxSumIncreasingSubsequence([1,2,3,4,5]))
+def buildSequence(array,sequences,currentIdx):
+    out = []
+    while currentIdx is not None:
+        out.append(array[currentIdx])
+        currentIdx = sequences[currentIdx]
+    return list(reversed(out))
