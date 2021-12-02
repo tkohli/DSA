@@ -15,9 +15,9 @@ def getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo):
     depthTwo = getDescendantDepth(descendantTwo,topAncestor)
     # find the lower decendant up to same level so backTrack
     if depthOne>depthTwo:
-        backTrackAncestralTree(depthOne,depthTwo,depthTwo-depthOne)
+        backTrackAncestralTree(descendantOne,descendantTwo,depthOne-depthTwo)
     else:
-        backTrackAncestralTree(depthTwo,depthOne,depthOne-depthTwo)
+        backTrackAncestralTree(descendantTwo,descendantOne,depthTwo-depthOne)
 
 
 def getDescendantDepth(descendant,topAncestor):
