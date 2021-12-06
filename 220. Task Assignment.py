@@ -2,8 +2,16 @@ def taskAssignment(k, tasks):
     pairedTasks = []
     sortedTask = sorted(tasks) # need index as well
     taskDurationToIndices = getTaskDurationToIndices(tasks)
-    print(taskDurationToIndices)
+    for idx in range(k):
+        task1Duration = sortedTask[idx]
+        taskDuration = taskDurationToIndices[task1Duration]
+        task1Index = taskDuration.pop()
+        task2Duration = sortedTask[len(tasks)-1-idx]
+        task2Duration = taskDurationToIndices[task2Duration]
+        task2Index = task2Duration.pop()
 
+        pairedTasks.append([task1Index,task2Index])
+    return pairedTasks
 
 def getTaskDurationToIndices(tasks):
     taskDurationToIndices = {}
