@@ -1,11 +1,18 @@
-releaseTimes = [9, 29, 49, 50]
-keysPressed = "cbcd"
-maxDuration = releaseTimes[0]
-prev = maxDuration
-idx = 0
-for i, time in zip(range(0, len(releaseTimes)), releaseTimes[1:]):
-    if maxDuration <= (time-prev) and keysPressed[i] < keysPressed[idx]:
-        idx = i
-        maxDuration = time-prev
-    prev = time
-print(keysPressed[i])
+class Solution(object):
+    def slowestKey(self, releaseTimes, keysPressed):
+        """
+        :type releaseTimes: List[int]
+        :type keysPressed: str
+        :rtype: str
+        """
+        maxTime = releaseTimes[0]
+        currentTime, currentKey = 0, 0
+        for i in range(len(keysPressed)-1):
+            j = i+1
+            currentTime = releaseTimes[j]-releaseTimes[i]
+            if currentTime > maxTime:
+                maxTime = currentTime
+                currentKey = j
+            elif currentTime == maxTime and (keysPressed[j]) > (keysPressed[currentKey]):
+                currentKey = j
+        return (keysPressed[currentKey])
