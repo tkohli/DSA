@@ -1,3 +1,6 @@
+from collections import defaultdict
+
+
 class Solution(object):
     def findJudge(self, n, trust):
         """
