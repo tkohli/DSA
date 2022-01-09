@@ -2,7 +2,7 @@ grid = [[0, 1, -1], [1, 0, -1], [1, 1, 1]]
 
 
 class Solution:
-    def cherryPickup(self, grid: List[List[int]]) -> int:
+    def cherryPickup(self, grid):
         m = len(grid)
         n = len(grid[0])
         dp = [[[0]*n for _ in range(n)] for __ in range(m)]
