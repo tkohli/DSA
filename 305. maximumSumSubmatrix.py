@@ -15,7 +15,7 @@ def maximumSumSubmatrix(matrix, size):
             if not touchesleftBorder:
                 total -= sums[row][col-size]
 
-                leftorRight = touchesleftBorder or touchesTopBorder
+            leftorRight = touchesleftBorder or touchesTopBorder
             if not leftorRight:
                 total += sums[row-size][col-size]
 
