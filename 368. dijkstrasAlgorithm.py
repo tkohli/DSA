@@ -7,7 +7,19 @@ def dijkstrasAlgorithm(start, edges):
     visited = set(0)
 
     while len(visited) != numberOfVertices:
-        return minDistances
+        vertex, currentMin = getVertexWithMinDistance(minDistances, visited)
+        if currentMin == float("inf"):
+            break
+        visited.add(vertex)
+        for edge in edges:
+            destination, cost = edge
+            if destination in visited:
+                continue
+            newPath = currentMin+cost
+            currentCost = minDistances[destination]
+            minDistances[destination] = min(newPath, currentCost)
+    return list(map(lambda x: -1 if x == float("inf") else x, minDistances))
+    # return minDistances
 
 
 def getVertexWithMinDistance(distances, visited):
