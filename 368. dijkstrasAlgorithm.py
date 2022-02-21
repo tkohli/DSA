@@ -2,9 +2,9 @@ def dijkstrasAlgorithm(start, edges):
     numberOfVertices = len(edges)
 
     minDistances = [float("inf") for _ in range(numberOfVertices)]
-    minDistances[0] = 0
+    minDistances[start] = 0
 
-    visited = set(0)
+    visited = set(start)
 
     while len(visited) != numberOfVertices:
         vertex, currentMin = getVertexWithMinDistance(minDistances, visited)
