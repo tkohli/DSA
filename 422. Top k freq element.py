@@ -1,10 +1,8 @@
-from re import L
-
-
+"""
 nums = [1,1,1,2,2,3]
 k = 2
-# o/p = [1,2]
-"""
+o/p = [1,2]
+
 Can be solved easily using dict or 
 just sort it out then keep count
 it will use n log n
