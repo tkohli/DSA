@@ -30,9 +30,10 @@ def dfs(i, cur, total):
         return # our base return case
     # now make 2 recusrive calls where add prev char to one
     # and increase i to second part
-    dfs(i+1, cur, total)
     cur.append(candidates[i])
     dfs(i,cur,total+candidates[i])
+    cur.pop()
+    dfs(i+1, cur, total)
 
 
 dfs(0,[],0)
