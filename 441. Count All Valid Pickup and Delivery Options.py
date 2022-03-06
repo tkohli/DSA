@@ -35,3 +35,35 @@ class Solution:
                     ) * dp[unpicked][undelivered-1]
                     dp[unpicked][undelivered]%=mod
         return dp[n][n]
+
+"""
+permutaion we can directly use it without dp and memomization
+"""
+class Solution:
+    def countOrders(self, n: int) -> int:
+        MOD = 1000000007
+        ans = 1
+        for i in range(1,n+1):
+            ans = ans*i     # pickups -> ways to arrange 1*2*3*4*5*...n
+            ans = ans * (2*i-1)     # ways to arrange all deliveries 1*3*5...(2n-1)
+
+            ans%=MOD
+        return ans
+
+
+
+class Solution:
+    def countOrders(self, n: int) -> int:
+        MOD = 1000000007
+        ans = 1
+        
+        for i in range(1, 2 * n + 1):
+            ans = ans * i
+            
+            # We only need to divide the result by 2 n-times.
+            # To prevent decimal results we divide after multiplying an even number.
+            if not i % 2:
+                ans = ans // 2
+            ans %= MOD
+        
+        return ans
