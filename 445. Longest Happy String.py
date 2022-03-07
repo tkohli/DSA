@@ -27,9 +27,9 @@ while maxHeap:
         count2-=1
         if count2:
             heapq.heappush(maxHeap, [count2,char2])
-    res+=char
-    count-=1
-    if count:
-        heapq.heappush(maxHeap, [count,char])
-
-        
+    else:
+        res+=char
+        count-=1
+        if count:
+            heapq.heappush(maxHeap, [count,char])
+print(res)
