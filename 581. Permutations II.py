@@ -1,5 +1,3 @@
-from itertools import permutations
-
-
-nums = [1, 1, 2]
-print(list(set(permutations(nums))))
+class Solution:
+    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+        return list(set(permutations(nums)))
