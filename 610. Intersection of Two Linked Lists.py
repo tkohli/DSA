@@ -14,19 +14,25 @@ Optimization -> We take lst1 as n and n2 for lst2 then we do cycling check which
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
-        if headA is None and headB is None:
-            return None
+        pA, pB = headA, headB
+        while pA != pB:
+            pA = pA.next if pA else headB
+            pB = pB.next if pB else headA
+        return pA
 
-        n = headA
-        m = headB
+        # if headA is None and headB is None:
+        #     return None
 
-        while n != m:
-            if n is None:
-                n = headB
-            else:
-                n = n.next
-            if m is None:
-                m = headA
-            else:
-                m = m.next
-        return n
+        # n = headA
+        # m = headB
+
+        # while n != m:
+        #     if n is None:
+        #         n = headB
+        #     else:
+        #         n = n.next
+        #     if m is None:
+        #         m = headA
+        #     else:
+        #         m = m.next
+        # return n
