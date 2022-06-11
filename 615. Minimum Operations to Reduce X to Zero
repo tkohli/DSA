@@ -1,0 +1,25 @@
+class Solution:
+    def minOperations(self, nums: List[int], x: int) -> int:
+        """
+        We start by taking total sum - x like 2 sum and then find longest subarray with that sum using sliding window
+        then we return len of nums - len of subarray as our anseasy for visualization
+        """
+        targetSum = sum(nums)-x
+        curSum=maxLen=0
+        i=j=0
+        found = False # our flag to check
+        while j<len(nums):
+            curSum += nums[j]
+            # if curSum is greater than targetsum then move startPointer i
+            while curSum >targetSum and i<=j:
+                curSum-=nums[i]
+                i+=1
+            
+            if curSum==targetSum:
+                found = True
+                maxLen = max(maxLen,j-i+1)
+            j+=1
+        if found:
+            return len(nums)-maxLen
+        return -1
+            
