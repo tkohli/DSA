@@ -9,3 +9,9 @@ class Solution:
                     continue
                 ans = max((len(words[i])*len(words[j])), ans)
         return ans
+
+
+"""
+Using bitset as we are making charset for processing this but we can make a bitset
+which will have less comparision time  
+"""
