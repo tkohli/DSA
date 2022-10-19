@@ -3,12 +3,12 @@
 class Solution:
     def hardestWorker(self, n: int, logs: List[List[int]]) -> int:
         prev = 0
-        ans = [0,0]
-        for usr,end in logs:
-            if ans[1]==end-prev:
-                ans[0] = min(ans[0],usr)
-            if ans[1]<end-prev:
-                ans = [usr,end-prev]
+        ans = [0, 0]
+        for usr, end in logs:
+            if ans[1] == end-prev:
+                ans[0] = min(ans[0], usr)
+            if ans[1] < end-prev:
+                ans = [usr, end-prev]
             prev = end
             # print(ans)
         return ans[0]
