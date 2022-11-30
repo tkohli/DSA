@@ -51,3 +51,6 @@ class Solution:
             head = head.next
 
         return dummyHead.next
+
+
+# q4
