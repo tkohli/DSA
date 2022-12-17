@@ -11,3 +11,5 @@ class Solution:
                     if nums[i] != nums[j] and nums[i] != nums[k] and nums[j] != nums[k]:
                         cnt += 1
         return cnt
+
+# Closest Nodes Queries in a Binary Search Tree
