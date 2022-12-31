@@ -1,7 +1,7 @@
 # All Trees Question BT and BST 
 
-- [ ]  1.  Binary Tree Traversals in Binary Tree <br>
-- [ ]  2.  Preorder Traversal of Binary Tree<br>
+- [X]  1.  Binary Tree Traversals in Binary Tree <br>
+- [X]  2.  Preorder Traversal of Binary Tree<br>
 - [ ]  3.  Inorder Traversal of Binary Tree<br>
 - [ ]  4.  Post-order Traversal of Binary Tree<br>
 - [ ]  5.  Level order Traversal / Level order traversal in spiral form<br>
