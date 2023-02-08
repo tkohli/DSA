@@ -1,5 +1,6 @@
-# All Recursion Question - Can you solve them using recursion only also try using loops
-Main focus on writing recursive code we will discuss concepts of ll,bst etc when we study ll, bst etc
+# All Recursion Question - Can you solve them using recursion 
+Main focus on writing recursive code we will discuss concepts of LL,bst etc when we study LL, bst etc<br>
+
 
 - [ ]  0.  Print LL using Recursion <br>
 - [ ]  1.  Reverse String <br>
