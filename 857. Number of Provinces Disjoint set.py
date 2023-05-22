@@ -12,3 +12,15 @@ https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3881/
 """
 
 isConnected = [[1,1,0],[1,1,0],[0,0,1]]
+
+class UnionFind(object):
+    def __init__(self, n):
+        self.u = list(range(n))
+        
+    def union(self, a, b):
+        ra, rb = self.find(a), self.find(b)
+        if ra != rb: self.u[ra] = rb
+    
+    def find(self, a):
+        while self.u[a] != a: a = self.u[a]
+        return a
