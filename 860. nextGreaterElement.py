@@ -60,6 +60,7 @@ def nextGreaterElement2(arr):
             else:
                 res[cirIdx] = stack[-1]
                 break
+            print(res)
         stack.append(arr[cirIdx])
     return res
 
